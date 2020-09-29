@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script type="text/javascript"></script>
+	<script type="text/javascript">
+		var a=angular.module("c",[]);
+		a.controller("cc",function($scope)
+		{
+			$scope.co=0;
+			$scope.no=0;
+            $scope.cost=function(n){
+            	$scope.co=n+($scope.co);
+            	$scope.no++;
+            	
+            
+
+}
+		});
+	
+	</script>
+	<style type="text/css">
+		img
+		{
+			width:500px;
+			height:200px;
+			padding-left: 70px;
+		}
+		p
+		{
+			background-color: white;
+		}
+		table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+	</style>
+</head>
+<body style="background-image: url('back.jpg')">
+	<br>
+<div class="container-sm" ng-app="c" ng-controller="cc">
+	<table style="width: 1200px;grid-row-gap: 30px;">
+		<tr><td colspan="2"><button class="bg-info btn-block">Add to cart</button></td></tr>
+	
+	
+	
+		<tr><td><button class="bg-warning btn-block" ng-click="cost(30)">Coffee Rs 30</button></td><td><span><img src="coffee.jpg"></span></td></tr>
+	<tr><td><button class="bg-info btn-block" ng-click="cost(20)">Tea Rs 20</button></td><td><span><img src="tea.jpg"></span></td></tr>
+	
+	<tr><td><button class="bg-secondary btn-block" ng-click="cost(50)">Cold drink Rs 50</button></td><td><span><img src="colddrink.jpg"></span></td></tr>
+	
+	<tr><td><button class="bg-success btn-block" ng-click="cost(80)">Shake Rs 80</button></td><td><span><img src="shake.jpg"></span></td></tr>
+	</table>
+	<p>Ordered items: <span class="p" style="background-color: green;"><b>{{no}}</b></span></p>
+	<br>
+	<p>Total amount: Rs. <span class="q" style="background-color: green;"><b>{{co}}</b></span></p>
+	
+</div>
+</body>
+</html>
